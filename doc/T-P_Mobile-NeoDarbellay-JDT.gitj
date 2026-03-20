@@ -1,0 +1,29 @@
+{
+  "repoUrl": "https://github.com/neo-darbellay/P_Mobile",
+  "projectName": "P_Mobile_neodarbellay",
+  "branch": "main",
+  "me": "neo-darbellay",
+  "journalStartDate": null,
+  "exceptions": [
+    {
+      "id": "59cc9b06-c9c6-49fa-a8c8-f56acb64310b",
+      "type": "commitless",
+      "name": "Learn(Projet): Début du projet",
+      "description": "Nous avons parlé du projet, et remarqué qu'il y avait un soucis, car nous n'avons pas fait le backend de Flashcards, et devons donc créer notre propre projet P_Mobile",
+      "date": "2026-03-20T07:28:00.000Z",
+      "duration": 28,
+      "status": "Done",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "a11b8f86-4ca5-47dc-88be-9660ae680438",
+      "type": "commitless",
+      "name": "doc(CDC): Créer et ajouter le CDC",
+      "description": "https://github.com/neo-darbellay/P_Mobile/commit/1e25b5a94e953d161fba70f140ddd5e9c2f5dd72",
+      "date": "2026-03-20T08:30:00.000Z",
+      "duration": 62,
+      "status": "Done",
+      "author": "neo-darbellay"
+    }
+  ]
+}
