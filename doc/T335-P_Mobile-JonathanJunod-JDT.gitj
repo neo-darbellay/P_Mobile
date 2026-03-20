@@ -1,0 +1,49 @@
+{
+  "repoUrl": "https://github.com/neo-darbellay/P_Mobile",
+  "projectName": "T335-P_Mobile-JonathanJunod-JDT",
+  "branch": "main",
+  "me": "Jonathan150408",
+  "journalStartDate": null,
+  "exceptions": [
+    {
+      "id": "c893d768-a9dc-4b34-9727-44f2d0b713a1",
+      "type": "commitless",
+      "name": "learn(projet) : introduire le projet",
+      "description": "",
+      "date": "2026-03-20T08:34:00.000Z",
+      "duration": 28,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "c11d9255-3646-41e7-928d-947cc7ac7e9c",
+      "type": "commitless",
+      "name": "chore(JDT) : setup gitjournal",
+      "description": "",
+      "date": "2026-03-20T08:50:00.000Z",
+      "duration": 5,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "2a4771ce-f85b-416e-8fb9-4c660f7e414d",
+      "type": "commitless",
+      "name": "chore(CdC) : revoir le CdC avec le client",
+      "description": "",
+      "date": "2026-03-20T09:05:00.000Z",
+      "duration": 15,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "3ceccd2e-3401-46ea-a990-3a34d71c0cc6",
+      "type": "commitless",
+      "name": "doc(maquettes) : commencer les maquettes",
+      "description": "",
+      "date": "2026-03-20T12:13",
+      "duration": 90,
+      "status": "WIP",
+      "author": "Jonathan150408"
+    }
+  ]
+}
