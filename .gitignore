@@ -8,6 +8,9 @@
 *.zip
 *.docx
 
+# Include certain files
+!335-AppMobileCDC.pdf
+
 # User-specific files
 *.rsuser
 *.suo
