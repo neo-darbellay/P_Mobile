@@ -6,6 +6,8 @@
 >
 > Client : PPT/RFA/JMY
 >
+> Apprentis : Jonathand Junod et Néo Darbellay
+>
 > Dates de réalisation : 2ème année
 >
 > Charge de travail : 37p
@@ -56,10 +58,10 @@ Finalement, un document numérique au format PDF sera livré.
 
 #### 7.1.2 Base de donnée
 
-- La base de données sera réalisée avec SQLLite.
+- La base de données sera réalisée avec SQLite.
 - La db sera stockée en local.
 - La gestion des utilisateurs sera donc ignorée, puisque plusieurs utilisateurs n'utilisent pas la même base de données.
-- Le MCD et le MLD seront réalisés et fournis avec l'application au format .loo
+- Le MCD et le MLD seront réalisés en utilisant l'application Looping et convertir en png, puis mis dans un fichier PDF
 - La structure de la DB sera fait en sorte que :
   - On puisse ajouter des catégories/listes aux tâches
   - Un status (fait/non fait)
@@ -68,7 +70,7 @@ Finalement, un document numérique au format PDF sera livré.
 
 - En tant qu'utilisateur, je souhaite :
   - Avoir une vue sur les tâches d'une liste, afin de voir ce qu'il me reste à faire.
-  - Avoir une vue sur les tâches d'une liste qui ont étées réalisées, afin de voir ce que j'ai déjà fait.
+  - Avoir une vue sur les tâches d'une liste qui ont été réalisées, afin de voir ce que j'ai déjà fait.
   - Pouvoir créer des tâches, afin d'organiser ma journée.
     - Les tâches contiennent un titre, et une description, qui est optionnelle
   - Pouvoir valider des tâches, afin de constater mon avancée.
@@ -119,6 +121,7 @@ Finalement, un document numérique au format PDF sera livré.
     - Par date de création croissant/décroissant
     - En rapport au status de la tâche (Fait/Non-fait)
     - Par tag
+    - Par délai
     - Custom (l'utilisateur peut lui-même bouger les tâches dans l'ordre qu'il veut)
 
   - Pouvoir faire une recherche textuelle de tâches depuis la page d'accueil ainsi que depuis la page d'une liste, afin de retrouver les tâches qui m'intéressent.
@@ -133,11 +136,19 @@ Finalement, un document numérique au format PDF sera livré.
 
   - Un guide d'utilisant sous le format d'un bouton aide, afin de faire comprendre à l'utilisateur comment l'application fonctionne
 
+  - Avoir une liste dynamique "Aujourd'hui" qui nous permet de sélectionner des tâches d'autre listes, afin que je puisse gérer ma journée correctement
+    - Il faudra aussi que, si une tâche a une deadline ou se répète, qu'elle se mette automatiquement dans la liste "Aujourd'hui"
+
+  - Pouvoir définir une règle de suppression des tâches lors de la création d'une liste
+    - Après X temps qu'une tâche est noté "done", elle se fait effacer automatiquement
+    - Par défaut, la règle n'est pas active, et n'efface rien si l'utilisateur ne le précise pas
+
 ### 8 Livrables
 
 - Archive au format ZIP contenant :
   - Un document PDF avec les maquettes de l’application
   - Un document PDF contenant au moins 3 scénarios de tests manuels
+  - Les journaux de travail en format PDF
   - Le code source complet de l’application respectant les normes de codage
     - Incluant le dossier .git
 

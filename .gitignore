@@ -9,7 +9,7 @@
 *.docx
 
 # Include certain files
-!335-AppMobileCDC.pdf
+!doc/*.pdf
 
 # User-specific files
 *.rsuser
