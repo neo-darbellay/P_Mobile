@@ -24,6 +24,39 @@
       "duration": 62,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "ec9bd3d7-9073-4778-b430-5445cba4004a",
+      "type": "commitless",
+      "name": "chore(CDC): Approuver le CDC avec le client",
+      "description": "",
+      "date": "2026-03-20T09:05:00.000Z",
+      "duration": 20,
+      "status": "Done",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "1ffc8266-0613-4b24-ad33-bb7c3275b469",
+      "type": "commitpatch",
+      "sha": "ecd02f46f40d7f98634d330e10b389452f72693d",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/ecd02f46f40d7f98634d330e10b389452f72693d",
+      "name": "feat(CDC): Modification du CDC avec les demandes du client",
+      "description": "",
+      "date": "2026-03-20T09:36:00.000Z",
+      "duration": 31,
+      "status": "Done",
+      "author": "neo-darbellay",
+      "patch": true
+    },
+    {
+      "id": "d2d143fe-0346-4616-82c4-ba3192bddc2f",
+      "type": "commitless",
+      "name": "feat(Maquette): Début des maquettes",
+      "description": "J'ai fait le header, le \"footer\", et est en train de faire les paramètres",
+      "date": "2026-03-20T11:15:00.000Z",
+      "duration": 96,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
