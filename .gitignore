@@ -7,6 +7,7 @@
 *.pdf
 *.zip
 *.docx
+*.png
 
 # Include certain files
 !doc/*.pdf
@@ -407,3 +408,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+doc/MM335-P_Mobile-JonathanNeo.loo
+doc/MM335-MCD_MLD.md
