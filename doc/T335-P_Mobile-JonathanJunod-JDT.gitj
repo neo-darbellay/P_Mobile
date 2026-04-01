@@ -44,6 +44,26 @@
       "duration": 90,
       "status": "WIP",
       "author": "Jonathan150408"
+    },
+    {
+      "id": "e3eaa489-b163-4d62-809d-892c21b7ddb4",
+      "type": "commitless",
+      "name": "chore(point de situation) : discuter du déroulement du projet avec l'enseignant",
+      "description": "",
+      "date": "2026-04-01T12:33:00.000Z",
+      "duration": 5,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "0d12a56d-6aa1-42b0-84f6-323d378bf4a3",
+      "type": "commitless",
+      "name": "doc(maquettes) : terminer les maquettes et le storyboard",
+      "description": "pages :\r\n- nouvelle liste\r\n- Modifier une tâche\r\n- Mes tags\r\n- Nouveau tag\r\n- Modifier un tag\r\n\r\nAjout des relations (flèches) et descriptions (texte)\r\n\r\nRévision des syles (couleurs, forme des éléments) et de l'accessibilité (taille des éléments, disposition, navigation).\r\n\r\nEn collaboration avec Néo Darbellay",
+      "date": "2026-04-01T13:47:00.000Z",
+      "duration": 135,
+      "status": "Done",
+      "author": "Jonathan150408"
     }
   ]
 }
