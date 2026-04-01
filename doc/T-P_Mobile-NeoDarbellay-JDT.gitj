@@ -74,7 +74,7 @@
       "name": "feat(Maquette): Continuation des maquettes",
       "description": "Début du storyboard, bientôt fini",
       "date": "2026-04-01T14:28",
-      "duration": 73,
+      "duration": 83,
       "status": "Done",
       "author": "neo-darbellay"
     },
@@ -105,8 +105,8 @@
       "id": "4ad99bca-80e5-4281-95e3-1abc4fcdc20f",
       "type": "commitless",
       "name": "learn(MAUI): Renseignement sur les applications MAUI",
-      "description": "",
-      "date": "2026-04-01T14:35:00.000Z",
+      "description": "https://kenslearningcurve.com/mobile-development/getting-started-with-maui/\r\nhttps://learn.microsoft.com/en-us/dotnet/maui/get-started/first-app?view=net-maui-10.0&tabs=vswin&pivots=devices-android",
+      "date": "2026-04-01T16:35",
       "duration": 27,
       "status": "Done",
       "author": "neo-darbellay"
