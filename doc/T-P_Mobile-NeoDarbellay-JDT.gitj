@@ -57,6 +57,49 @@
       "duration": 96,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "ca5f801a-d3a2-4f8c-a2ab-648df0d89570",
+      "type": "commitless",
+      "name": "chore(Point de situation): Discuter du projet avec l'enseignant",
+      "description": "",
+      "date": "2026-04-01T12:33:00.000Z",
+      "duration": 5,
+      "status": "Done",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "7b22f859-28c8-4506-9ec9-6819c44329fe",
+      "type": "commitless",
+      "name": "feat(Maquette): Continuation des maquettes",
+      "description": "Début du storyboard, bientôt fini",
+      "date": "2026-04-01T14:28",
+      "duration": 73,
+      "status": "Done",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "550f8dd8-778d-4dcf-ac7c-9c63ae670727",
+      "type": "commitpatch",
+      "sha": "22680762b0ddfd134979736ded60a14168051fdb",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/22680762b0ddfd134979736ded60a14168051fdb",
+      "name": "feat(Maquettes et Storyboard): Finalisation",
+      "description": "Nous avons fini les maquettes et le storyboard",
+      "date": "2026-04-01T13:53:00.000Z",
+      "duration": 65,
+      "status": "Done",
+      "author": "neo-darbellay",
+      "patch": true
+    },
+    {
+      "id": "e1f0d731-61f7-49bd-9fc0-2a4f91e05f39",
+      "type": "commitless",
+      "name": "fix(Signatures de commit): Arrêter de signer mes commits",
+      "description": "Un enseignant que nous avons eu ce matin nous a conseillé de signer nos commit, ce que j'ai fait dans l'autre salle, mais cela n'a fait que des erreurs sur ce poste et ne m'a pas laissé faire de commit jusqu'à ce que j'arrive à désactiver la signature de commits",
+      "date": "2026-04-01T14:08:00.000Z",
+      "duration": 15,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
