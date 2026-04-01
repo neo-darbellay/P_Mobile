@@ -100,6 +100,16 @@
       "duration": 15,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "4ad99bca-80e5-4281-95e3-1abc4fcdc20f",
+      "type": "commitless",
+      "name": "learn(MAUI): Renseignement sur les applications MAUI",
+      "description": "",
+      "date": "2026-04-01T14:35:00.000Z",
+      "duration": 27,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
