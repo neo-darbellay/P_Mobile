@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using TaskManager.data;
 
 namespace TaskManager
 {
@@ -18,6 +19,9 @@ namespace TaskManager
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            //added from here
+            builder.Services.AddSingleton<DatabaseContext>();
+            //to here
 
             return builder.Build();
         }
