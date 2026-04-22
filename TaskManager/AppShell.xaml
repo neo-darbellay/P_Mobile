@@ -3,12 +3,12 @@
     x:Class="TaskManager.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TaskManager"
+    xmlns:lists="clr-namespace:TaskManager.Pages"
     Title="TaskManager">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate lists:ShowLists}"
         Route="MainPage" />
 
 </Shell>
