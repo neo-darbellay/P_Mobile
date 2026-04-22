@@ -110,6 +110,16 @@
       "duration": 27,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "ca461c49-493c-407e-819f-1a06532e5779",
+      "type": "commitless",
+      "name": "learn(MAUI): Renseignement sur les applications MAUI",
+      "description": "Mêmes liens que la dernière fois (plus d'autres à la fin de la description), il me faut plus d'information pour pouvoir commencer proprement. Pour l'instant, j'utilise un projet temporaire pour faire des tests\r\n\r\nhttps://learn.microsoft.com/en-us/training/paths/build-apps-with-dotnet-maui/\r\nhttps://learn.microsoft.com/en-us/training/modules/create-user-interface-xaml/",
+      "date": "2026-04-22T12:45:00.000Z",
+      "duration": 95,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
