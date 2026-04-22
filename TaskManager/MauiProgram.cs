@@ -11,8 +11,12 @@ namespace TaskManager
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("InriaSans-Bold.ttf", "InriaSansBold");
+                    fonts.AddFont("InriaSans-BoldItalic.ttf", "InriaSansBoldItalic");
+                    fonts.AddFont("InriaSans-Italic.ttf", "InriaSansItalic");
+                    fonts.AddFont("InriaSans-Light.ttf", "InriaSansLight");
+                    fonts.AddFont("InriaSans-LightItalic.ttf", "InriaSansLightItalic");
+                    fonts.AddFont("InriaSans-Regular.ttf", "InriaSansRegular");
                 });
 
 #if DEBUG

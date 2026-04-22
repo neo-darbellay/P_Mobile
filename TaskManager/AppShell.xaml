@@ -6,8 +6,17 @@
     xmlns:lists="clr-namespace:TaskManager.Pages"
     Title="TaskManager">
 
+    <Shell.TitleView>
+        <Label Text="{Binding Source={RelativeSource AncestorType={x:Type Shell}}, Path=Title}"
+               FontFamily="InriaSansBold"
+               FontSize="24"
+               TextColor="Black"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
+    </Shell.TitleView>
+
     <ShellContent
-        Title="Home"
+        Shell.BackgroundColor="#D9D9D9"
         ContentTemplate="{DataTemplate lists:ShowLists}"
         Route="MainPage" />
 
