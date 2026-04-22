@@ -1,7 +1,7 @@
 {
   "repoUrl": "https://github.com/neo-darbellay/P_Mobile",
   "projectName": "P_Mobile_neodarbellay",
-  "branch": "main",
+  "branch": "page-layout",
   "me": "neo-darbellay",
   "journalStartDate": null,
   "exceptions": [
@@ -110,6 +110,19 @@
       "duration": 27,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "19a49d15-69bc-405d-8584-954c38c3330a",
+      "type": "commitpatch",
+      "sha": "39fc2a1eab2bf98d2a58f884c27bf1262b5a6555",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/39fc2a1eab2bf98d2a58f884c27bf1262b5a6555",
+      "name": "feat(Style): Fait en sorte que la bar de titre est custom + ajout de styles",
+      "description": "Cela m'a pris du temps, car j'ai eu beaucoup de soucis pour compiler l'application",
+      "date": "2026-04-22T16:33",
+      "duration": 60,
+      "status": "Done",
+      "author": "neo-darbellay",
+      "patch": true
     }
   ]
 }
