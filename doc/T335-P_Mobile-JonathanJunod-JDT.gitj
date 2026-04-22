@@ -64,6 +64,16 @@
       "duration": 135,
       "status": "Done",
       "author": "Jonathan150408"
+    },
+    {
+      "id": "1728627c-5651-44a9-8cf7-f9f29c65fbeb",
+      "type": "commitless",
+      "name": "doc(SQLite et MAUI) : tenter de comprendre comment faire la relation entre les 2",
+      "description": "https://www.youtube.com/watch?v=7pO3A8VvtRM&t=14s",
+      "date": "2026-04-01T14:33:00.000Z",
+      "duration": 48,
+      "status": "Done",
+      "author": "Jonathan150408"
     }
   ]
 }
