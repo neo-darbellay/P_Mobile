@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.Pages.NewList"
              Title="Liste">
-    <VerticalStackLayout>
+    <VerticalStackLayout Style="{StaticResource Main}">
         <Label 
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
