@@ -48,7 +48,7 @@ namespace TaskManager.Models
 			set { _done = value; }
 		}
 
-		public Task Clone() => MemberwiseClone() as Task;
+		public TaskManager.Models.Task Clone() => MemberwiseClone() as TaskManager.Models.Task;
 
 	}
 }

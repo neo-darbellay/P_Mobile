@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using TaskManager.data;
+using TaskManager.Models.ViewModel;
 
 namespace TaskManager
 {
@@ -21,6 +22,8 @@ namespace TaskManager
 #endif
             //added from here
             builder.Services.AddSingleton<DatabaseContext>();
+            builder.Services.AddSingleton<TasksViewModel>();
+            builder.Services.AddSingleton<MainPage>();
             //to here
 
             return builder.Build();
