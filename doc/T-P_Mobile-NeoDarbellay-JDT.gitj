@@ -123,6 +123,19 @@
       "status": "Done",
       "author": "neo-darbellay",
       "patch": true
+    },
+    {
+      "id": "491517b6-a83e-44ad-bca3-1e0325e254d6",
+      "type": "commitpatch",
+      "sha": "d82b3c484162df2f4816637760989ce89d76667e",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/d82b3c484162df2f4816637760989ce89d76667e",
+      "name": "feat(ShowList): Rendu visuel de ShowList",
+      "description": "Il m'a fallu installer un nouveau packet NuGet pour faire des animations \"onClick\", mais celui là ne voulait pas s'installer pendant un long moment.\r\nJ'ai aussi eu quelques soucis à propos du ScrollView, des padding/margin et des spacing, ce qui m'a retardé énormément. Je m'occuperais des autres pages la prochaine fois.",
+      "date": "2026-04-29T14:35:00.000Z",
+      "duration": 190,
+      "status": "Done",
+      "author": "neo-darbellay",
+      "patch": true
     }
   ]
 }
