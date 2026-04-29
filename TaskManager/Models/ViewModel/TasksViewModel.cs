@@ -12,7 +12,6 @@ namespace TaskManager.Models.ViewModel
 {
     public partial class TasksViewModel : ObservableObject
     {
-
         private readonly DatabaseContext _context;
 
         public TasksViewModel(DatabaseContext context)
@@ -21,7 +20,7 @@ namespace TaskManager.Models.ViewModel
         }
 
         [ObservableProperty]
-        private ObservableCollection<Task> _tasks;
+        private ObservableCollection<TaskManager.Models.Task> _tasks;
 
         [ObservableProperty]
         private TaskManager.Models.Task _operatingTask = new();
@@ -33,7 +32,7 @@ namespace TaskManager.Models.ViewModel
         private string _busytext;
 
         [RelayCommand]
-        private async System.Threading.Tasks.Task LoadTasksAsync()
+        public async System.Threading.Tasks.Task LoadTasksAsync()
         {
             var tasks = await _context.GetAllAsync<Task>();
             if (tasks is not null && tasks.Any())

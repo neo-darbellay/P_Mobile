@@ -10,7 +10,7 @@ namespace TaskManager.Models
 	/// <summary>
 	/// A task is a goal the user can create and try to complete. 
 	/// </summary>
-    class Task
+    public class Task
     {
 		/// <summary>
 		/// The id is unique and not null, it define the instance of the object

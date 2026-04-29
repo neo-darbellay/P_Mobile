@@ -1,24 +1,21 @@
-﻿namespace TaskManager
+﻿using TaskManager.Models.ViewModel;
+
+namespace TaskManager
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
-        public MainPage()
+        private readonly TasksViewModel _viewModel;
+        public MainPage(TasksViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = viewModel;
+            _viewModel = viewModel;
         }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
+        protected async override void OnAppearing()
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            base.OnAppearing();
+            await _viewModel.LoadTasksAsync();
         }
     }
 }
