@@ -136,6 +136,39 @@
       "status": "Done",
       "author": "neo-darbellay",
       "patch": true
+    },
+    {
+      "id": "2869d31a-22e1-4e89-9cae-28d4eccd8ed6",
+      "type": "commitless",
+      "name": "learn(cours): Appris de ce que j'ai loupé la dernière fois",
+      "description": "Le CRUD",
+      "date": "2026-05-06T11:18:00.000Z",
+      "duration": 8,
+      "status": "Done",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "8bd9c3fc-e035-41a9-bc13-afc3fce42d08",
+      "type": "commitpatch",
+      "sha": "426a96697f04945e6089e3280d7c075410bcf4b3",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/426a96697f04945e6089e3280d7c075410bcf4b3",
+      "name": "feat(NewList): Début des modifications",
+      "description": "",
+      "date": "2026-05-06T11:56:00.000Z",
+      "duration": 38,
+      "status": "WIP",
+      "author": "neo-darbellay",
+      "patch": true
+    },
+    {
+      "id": "e9b56393-6830-417c-993a-4816b0568c2e",
+      "type": "commitless",
+      "name": "chore(Point de situation): Entretien avec l'enseignant",
+      "description": "Nous avons discuté de la structure de la base de données et nous sommes arrêtés sur la relation 0, 2.\r\nNous avons aussi parlé de la façons dont la liste \"aujourd'hui\" se met à jour",
+      "date": "2026-05-06T12:06:00.000Z",
+      "duration": 10,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
