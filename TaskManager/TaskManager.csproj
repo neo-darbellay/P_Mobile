@@ -63,9 +63,13 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="nor0x.Maui.ColorPicker" Version="2.0.4" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Components\ColorPickerPopup.xaml.cs">
+	    <DependentUpon>ColorPickerPopup.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\NewTag.xaml.cs">
 	    <DependentUpon>NewTag.xaml</DependentUpon>
 	  </Compile>
@@ -78,6 +82,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Components\ColorPickerPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\NewTag.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

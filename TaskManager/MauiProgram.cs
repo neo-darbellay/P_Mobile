@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using Microsoft.Maui.Handlers;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace TaskManager
 {
@@ -12,6 +13,7 @@ namespace TaskManager
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseSkiaSharp()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("InriaSans-Bold.ttf", "InriaSansBold");

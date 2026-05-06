@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+            xmlns:controls="clr-namespace:Maui.ColorPicker;assembly=Maui.ColorPicker"
             x:Class="TaskManager.Pages.NewList"
             Title="Liste"
             Padding="10,0,10,0">
@@ -30,42 +31,21 @@
                 
                 <VerticalStackLayout Spacing="10">
                     <Label Text="Couleur" FontSize="22" Margin="0,20,0,0" HorizontalTextAlignment="Center"/>
-                    <Border StrokeShape="RoundRectangle 8" HorizontalOptions="Fill" StrokeThickness="2">
-                        <Entry Placeholder="Description (optionnelle)" FontSize="18" HorizontalTextAlignment="Center"/>
+
+                    <Border x:Name="ColorPreview" HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 12" BackgroundColor="{Binding UserPickedColor}">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Border.GestureRecognizers>
                     </Border>
                 </VerticalStackLayout>
             </FlexLayout>
         </ScrollView>
 
         <!-- Bottom buttons -->
-        <HorizontalStackLayout Grid.Row="3" Spacing="100" HorizontalOptions="Center" Margin="0,0,0,28">
-            <Border WidthRequest="100" HeightRequest="100" BackgroundColor="#A0A0A0" StrokeShape="RoundRectangle 16" Padding="32">
-                <Border.Behaviors>
-                    <toolkit:TouchBehavior
-                Command="{Binding Home}"
-                PressedOpacity="0.6"
-                PressedScale="0.95"/>
-                </Border.Behaviors>
+        <HorizontalStackLayout Grid.Row="3" Spacing="80" HorizontalOptions="Center" Margin="0,0,0,28">
+            <Button x:Name="Cancel" Text="Annuler" Clicked="Cancel_Clicked" BackgroundColor="Transparent" TextColor="Black" BorderColor="Black" BorderWidth="2"/>
 
-                <FlexLayout AlignItems="Center" JustifyContent="Center">
-                    <!-- TODO: Add the icon instead -->
-                    <Image Source="home.png"/>
-                </FlexLayout>
-            </Border>
-
-            <Border WidthRequest="100" HeightRequest="100" BackgroundColor="#A0A0A0" StrokeShape="RoundRectangle 16" Padding="32">
-                <Border.Behaviors>
-                    <toolkit:TouchBehavior
-                Command="{Binding Add}"
-                PressedOpacity="0.6"
-                PressedScale="0.95"/>
-                </Border.Behaviors>
-
-                <FlexLayout AlignItems="Center" JustifyContent="Center">
-                    <Image Source="add.png"/>
-                </FlexLayout>
-            </Border>
-
+            <Button x:Name="Create" Text="Créer" Clicked="Create_Clicked"  BackgroundColor="#0088FF"/>
         </HorizontalStackLayout>
     </Grid>
 </ContentPage>

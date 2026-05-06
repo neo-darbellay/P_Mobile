@@ -1,8 +1,8 @@
 namespace TaskManager.Pages;
 
-public partial class CreateTag : ContentPage
+public partial class NewTag : ContentPage
 {
-	public CreateTag()
+	public NewTag()
 	{
 		InitializeComponent();
 	}
