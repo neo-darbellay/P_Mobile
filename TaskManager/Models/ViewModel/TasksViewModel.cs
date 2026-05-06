@@ -23,7 +23,7 @@ namespace TaskManager.Models.ViewModel
         private ObservableCollection<TaskManager.Models.Task> _tasks = new ObservableCollection<Task>();
 
         [ObservableProperty]
-        private TaskManager.Models.Task _operatingTask = new();
+        private TaskManager.Models.Task _operatingTask = new TaskManager.Models.Task();
 
         [ObservableProperty]
         private bool _isBusy;
@@ -34,6 +34,9 @@ namespace TaskManager.Models.ViewModel
         [RelayCommand]
         public async System.Threading.Tasks.Task LoadTasksAsync()
         {
+            //debug
+            Console.WriteLine("Loading tasks");
+            Console.WriteLine("Active task is : {0}", OperatingTask);
 
             var tasks = await _context.GetAllAsync<Task>();
             if (tasks is not null && tasks.Any())
@@ -52,6 +55,10 @@ namespace TaskManager.Models.ViewModel
         [RelayCommand]
         private async System.Threading.Tasks.Task SaveTaskAsync()
         {
+            //debug
+            Console.WriteLine("Saving task");
+            Console.WriteLine("Active task is : {0}", OperatingTask);
+
             if (OperatingTask is null)
             {
                 return;
@@ -97,6 +104,10 @@ namespace TaskManager.Models.ViewModel
         {
             await ExecuteAsync(async () =>
             {
+                //debug
+                Console.WriteLine("Deleting task with id {0}", id);
+                Console.WriteLine("Active task is : {0}", OperatingTask);
+
                 if (await _context.DeleteItemByIdAsync<Task>(id))
                 {
                     TaskManager.Models.Task task = Tasks.FirstOrDefault(t => t.Id == id);

@@ -95,6 +95,7 @@
                       ColumnSpacing="10">
                     <VerticalStackLayout Grid.Row="0"
                      Grid.Column="0">
+                        <!-- the name field -->
                         <Label Text="Name"></Label>
                         <Entry Text="{Binding OperatingTask.Name}"
                                Placeholder="Task name"
@@ -102,6 +103,7 @@
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Row="0"
                                          Grid.Column="1">
+                        <!-- The description field -->
                         <Label Text="Description"></Label>
                         <Entry Text="{Binding OperatingTask.Description}"
                                Placeholder="Task description"

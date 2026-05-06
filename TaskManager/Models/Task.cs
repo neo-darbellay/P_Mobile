@@ -31,8 +31,8 @@ namespace TaskManager.Models
 		/// <summary>
 		/// A facultative short paragraph that defines what needs to be done for the task to close
 		/// </summary>
-		private string _description;
-		public string Description
+		private string? _description;
+		public string? Description
 		{
 			get { return _description; }
 			set { _description = value; }
@@ -60,10 +60,6 @@ namespace TaskManager.Models
 			{
 				return (false, $"{nameof(Name)} is required");
 			}
-			else if (string.IsNullOrWhiteSpace(Description))
-            {
-                return (false, $"{nameof(Description)} is required");
-            }
 			return (true, null);
         }
 
