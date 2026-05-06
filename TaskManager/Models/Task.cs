@@ -50,5 +50,22 @@ namespace TaskManager.Models
 
 		public TaskManager.Models.Task Clone() => MemberwiseClone() as TaskManager.Models.Task;
 
+		/// <summary>
+		/// Validates the fields when creating/updating a task
+		/// </summary>
+		/// <returns></returns>
+		public (bool Isvalid, string? ErrorMessage) Validate()
+		{
+			if (string.IsNullOrWhiteSpace(Name))
+			{
+				return (false, $"{nameof(Name)} is required");
+			}
+			else if (string.IsNullOrWhiteSpace(Description))
+            {
+                return (false, $"{nameof(Description)} is required");
+            }
+			return (true, null);
+        }
+
 	}
 }

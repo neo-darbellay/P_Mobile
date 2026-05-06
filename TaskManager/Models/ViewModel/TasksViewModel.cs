@@ -20,7 +20,7 @@ namespace TaskManager.Models.ViewModel
         }
 
         [ObservableProperty]
-        private ObservableCollection<TaskManager.Models.Task> _tasks;
+        private ObservableCollection<TaskManager.Models.Task> _tasks = new ObservableCollection<Task>();
 
         [ObservableProperty]
         private TaskManager.Models.Task _operatingTask = new();
@@ -34,11 +34,12 @@ namespace TaskManager.Models.ViewModel
         [RelayCommand]
         public async System.Threading.Tasks.Task LoadTasksAsync()
         {
+
             var tasks = await _context.GetAllAsync<Task>();
             if (tasks is not null && tasks.Any())
             {
                 Tasks ??= new ObservableCollection<Task>();
-                foreach (var task in Tasks)
+                foreach (TaskManager.Models.Task task in Tasks)
                 {
                     Tasks.Add(task);
                 }
@@ -55,6 +56,15 @@ namespace TaskManager.Models.ViewModel
             {
                 return;
             }
+
+            //validate the task before saving
+            (bool isValid, string? errorMessage) = OperatingTask.Validate();
+            if (!isValid)
+            {
+                await Shell.Current.DisplayAlert("Erreur de validation", errorMessage, "Ok");
+                return;
+            }
+
             string busyText = OperatingTask.Id == 0 ? "Creating task..." : "Updating task...";
             await ExecuteAsync(async () =>
             {
