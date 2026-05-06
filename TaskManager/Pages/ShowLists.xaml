@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-            x:Class="TaskManager.Pages.ShowLists"
-            Title="Mes listes"
-            Padding="10,0,10,0">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:components="clr-namespace:TaskManager.Components"
+             x:Class="TaskManager.Pages.ShowLists"
+             Title="Mes listes"
+             Padding="10,0,10,0">
     <Grid RowDefinitions="Auto, *, Auto, Auto">
         <!--Header-->
         <VerticalStackLayout Grid.Row="0" Padding="0,10,0,0">
@@ -217,44 +218,6 @@
         </Border>
 
         <!-- Bottom buttons -->
-        <HorizontalStackLayout Grid.Row="3" Spacing="100" HorizontalOptions="Center" Margin="0,0,0,28">
-            <Border WidthRequest="100" HeightRequest="100" BackgroundColor="#A0A0A0" StrokeShape="RoundRectangle 16" Padding="32">
-                <!-- Tap event -->
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnHomeTapped"/>
-                </Border.GestureRecognizers>
-
-                <!-- Touch animation -->
-                <Border.Behaviors>
-                    <toolkit:TouchBehavior
-                        PressedOpacity="0.6"
-                        PressedScale="0.95"/>
-                </Border.Behaviors>
-
-                <FlexLayout AlignItems="Center" JustifyContent="Center">
-                    <Image Source="home.png"/>
-                </FlexLayout>
-            </Border>
-
-            <Border WidthRequest="100" HeightRequest="100" BackgroundColor="#A0A0A0" StrokeShape="RoundRectangle 16" Padding="32">
-
-                <!-- Tap event -->
-                <Border.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnAddTapped"/>
-                </Border.GestureRecognizers>
-
-                <!-- Touch animation -->
-                <Border.Behaviors>
-                    <toolkit:TouchBehavior
-                        PressedOpacity="0.6"
-                        PressedScale="0.95"/>
-                </Border.Behaviors>
-
-                <FlexLayout AlignItems="Center" JustifyContent="Center">
-                    <Image Source="add.png"/>
-                </FlexLayout>
-            </Border>
-
-        </HorizontalStackLayout>
+        <components:BottomButtons Grid.Row="3" AddRoute="NewList"/>
     </Grid>
 </ContentPage>
