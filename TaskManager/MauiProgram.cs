@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using Microsoft.Maui.Handlers;
 
 namespace TaskManager
 {
@@ -19,6 +20,16 @@ namespace TaskManager
                     fonts.AddFont("InriaSans-Light.ttf", "InriaSansLight");
                     fonts.AddFont("InriaSans-LightItalic.ttf", "InriaSansLightItalic");
                     fonts.AddFont("InriaSans-Regular.ttf", "InriaSansRegular");
+                }).ConfigureMauiHandlers(handlers => {
+#if ANDROID
+                    // Remove the line underneat any Entry
+                    handlers.AddHandler(typeof(Entry), typeof(EntryHandler));
+                    EntryHandler.Mapper.AppendToMapping("NoUnderline", (handler, view) =>
+                    {
+                        handler.PlatformView.Background = null;
+                    });
+#endif
+
                 });
 
 #if DEBUG
