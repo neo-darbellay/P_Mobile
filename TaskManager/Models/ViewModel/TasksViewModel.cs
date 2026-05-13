@@ -119,7 +119,7 @@ namespace TaskManager.Models.ViewModel
                     await Shell.Current.DisplayAlert("Delete Error", "Task was not deleted", "Ok");
                 }
             }, "Deleting task");
-        }
+       }
 
         private async System.Threading.Tasks.Task ExecuteAsync(Func<System.Threading.Tasks.Task> operation, string? busyText = null)
         {
