@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -13,7 +14,7 @@ namespace TaskManager.data
         /// <summary>
         /// The name of the database
         /// </summary>
-        private const string Dbname = "db_taskmanager"; //extension à revoir .db3
+        private const string Dbname = "db_taskmanager.db3"; //extension à revoir .db2 ou .db3 ou pas du tout
         /// <summary>
         /// The path of the database, static so every instance of DatabaseContext share the same DbPath (and update the same)
         /// </summary>
@@ -90,7 +91,10 @@ namespace TaskManager.data
         public async Task<bool> AddItemAsync<TTable>(TTable item) where TTable : class, new()
         {
             await CreateTableIfNotExists<TTable>();
-            return await Database.InsertAsync(item) > 0;
+            int numberOfRowsAdded = await Database.InsertAsync(item);
+            //debug
+            Trace.WriteLine("Ajout de " + numberOfRowsAdded.ToString() + " données dans la base de données");
+            return numberOfRowsAdded > 0;
         }
 
         /// <summary>

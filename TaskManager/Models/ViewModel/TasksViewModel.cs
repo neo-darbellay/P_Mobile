@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,14 +36,14 @@ namespace TaskManager.Models.ViewModel
         public async System.Threading.Tasks.Task LoadTasksAsync()
         {
             //debug
-            Console.WriteLine("Loading tasks");
-            Console.WriteLine("Active task is : {0}", OperatingTask);
+            Trace.WriteLine("Loading tasks");
+            Trace.WriteLine("Active task is : ${0}", OperatingTask.ToString());
 
             var tasks = await _context.GetAllAsync<Task>();
             if (tasks is not null && tasks.Any())
             {
                 Tasks ??= new ObservableCollection<Task>();
-                foreach (TaskManager.Models.Task task in Tasks)
+                foreach (TaskManager.Models.Task task in tasks)
                 {
                     Tasks.Add(task);
                 }
