@@ -169,6 +169,26 @@
       "duration": 10,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "b2d3c1d1-7d2e-44ab-b2e2-f7d50620b187",
+      "type": "commitless",
+      "name": "feat(ShowTasks): Début des modifications",
+      "description": "Fait en sorte que le titre de la page est dynamique en rapport à la tâche choisi",
+      "date": "2026-05-13T15:10",
+      "duration": 10,
+      "status": "WIP",
+      "author": "neo-darbellay"
+    },
+    {
+      "id": "27f39ba3-0d6e-4b8b-a791-afb7b3d1d7b2",
+      "type": "commitless",
+      "name": "chore(80%): Faire l'évaluation des 80% avec le professeur",
+      "description": "",
+      "date": "2026-05-13T13:44:00.000Z",
+      "duration": 34,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
