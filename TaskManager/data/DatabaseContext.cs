@@ -92,8 +92,6 @@ namespace TaskManager.data
         {
             await CreateTableIfNotExists<TTable>();
             int numberOfRowsAdded = await Database.InsertAsync(item);
-            //debug
-            Trace.WriteLine("Ajout de " + numberOfRowsAdded.ToString() + " données dans la base de données");
             return numberOfRowsAdded > 0;
         }
 
@@ -106,7 +104,8 @@ namespace TaskManager.data
         public async Task<bool> UpdateItemAsync<TTable>(TTable item) where TTable : class, new()
         {
             await CreateTableIfNotExists<TTable>();
-            return await Database.UpdateAsync(item) > 0;
+            int numberOrRowsUpdated = await Database.UpdateAsync(item);
+            return numberOrRowsUpdated > 0;
         }
 
         /// <summary>

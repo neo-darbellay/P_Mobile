@@ -33,12 +33,39 @@ namespace TaskManager.Models.ViewModel
         private string _busytext;
 
         [RelayCommand]
+        public async System.Threading.Tasks.Task EditTaskAsync(int id)
+        {
+            //1. Find the task
+            TaskManager.Models.Task task = Tasks.FirstOrDefault(t => t.Id == id);
+            //2. Delete the old task
+            await DeleteTaskAsync(id); //in db
+            Tasks.RemoveAt(Tasks.IndexOf(task)); //in vars
+            //3. Save the task
+            await _context.AddItemAsync<Task>(task);
+            Tasks.Add(task);
+        }
+        private async void OnEditTaskClicked(object sender, EventArgs e)
+        {
+            Button? button = sender as Button;
+            TaskManager.Models.Task? task = button?.CommandParameter as TaskManager.Models.Task;
+
+            if (task == null) return;
+
+            // Navigate to edit page using Shell
+            // Pass deck, dataService and decks list so EditDeckPage can save
+            Dictionary<string, object> navigationParameter = new Dictionary<string, object>
+            {
+                { "task", task },
+                { "dataService", _context },
+                { "tasks", Tasks }
+            };
+            await Shell.Current.GoToAsync("EditTask", navigationParameter);
+        }
+
+
+        [RelayCommand]
         public async System.Threading.Tasks.Task LoadTasksAsync()
         {
-            //debug
-            Trace.WriteLine("Loading tasks");
-            Trace.WriteLine("Active task is : ${0}", OperatingTask.ToString());
-
             var tasks = await _context.GetAllAsync<Task>();
             if (tasks is not null && tasks.Any())
             {
@@ -56,10 +83,6 @@ namespace TaskManager.Models.ViewModel
         [RelayCommand]
         private async System.Threading.Tasks.Task SaveTaskAsync()
         {
-            //debug
-            Console.WriteLine("Saving task");
-            Console.WriteLine("Active task is : {0}", OperatingTask);
-
             if (OperatingTask is null)
             {
                 return;
@@ -82,15 +105,14 @@ namespace TaskManager.Models.ViewModel
                     await _context.AddItemAsync<Task>(OperatingTask);
                     Tasks.Add(OperatingTask);
                 }
-                else
-                {
-                    // Update Task
-                    await _context.UpdateItemAsync<Task>(OperatingTask);
-                    Task TaskCopy = OperatingTask.Clone();
-                    var index = Tasks.IndexOf(OperatingTask);
-                    Tasks.RemoveAt(index);
-                    Tasks.Insert(index, TaskCopy);
-                }
+                //else
+                //{
+                //    await _context.UpdateItemAsync<Task>(OperatingTask);
+                //    TaskManager.Models.Task TaskCopy = OperatingTask.Clone();
+                //    int index = Tasks.IndexOf(OperatingTask);
+                //    Tasks.RemoveAt(index);
+                //    Tasks.Insert(index, TaskCopy);
+                //}
                 SetOperatingTaskCommand.Execute(new());
             }, busyText);
         }
@@ -105,10 +127,6 @@ namespace TaskManager.Models.ViewModel
         {
             await ExecuteAsync(async () =>
             {
-                //debug
-                Console.WriteLine("Deleting task with id {0}", id);
-                Console.WriteLine("Active task is : {0}", OperatingTask);
-
                 if (await _context.DeleteItemByIdAsync<Task>(id))
                 {
                     TaskManager.Models.Task task = Tasks.FirstOrDefault(t => t.Id == id);
