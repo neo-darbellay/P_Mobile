@@ -110,6 +110,16 @@
       "duration": 27,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "623891b5-79e0-431d-9b57-1aaa7ebb9399",
+      "type": "commitless",
+      "name": "chore(zip des 2 parties du projet)",
+      "description": "",
+      "date": "2026-05-20T14:32:00.000Z",
+      "duration": 15,
+      "status": "Done",
+      "author": "neo-darbellay"
     }
   ]
 }
