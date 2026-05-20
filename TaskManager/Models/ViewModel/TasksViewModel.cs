@@ -32,36 +32,25 @@ namespace TaskManager.Models.ViewModel
         [ObservableProperty]
         private string _busytext;
 
-        [RelayCommand]
-        public async System.Threading.Tasks.Task EditTaskAsync(int id)
-        {
-            //1. Find the task
-            TaskManager.Models.Task task = Tasks.FirstOrDefault(t => t.Id == id);
-            //2. Delete the old task
-            await DeleteTaskAsync(id); //in db
-            Tasks.RemoveAt(Tasks.IndexOf(task)); //in vars
-            //3. Save the task
-            await _context.AddItemAsync<Task>(task);
-            Tasks.Add(task);
-        }
-        private async void OnEditTaskClicked(object sender, EventArgs e)
-        {
-            Button? button = sender as Button;
-            TaskManager.Models.Task? task = button?.CommandParameter as TaskManager.Models.Task;
-
-            if (task == null) return;
-
-            // Navigate to edit page using Shell
-            // Pass deck, dataService and decks list so EditDeckPage can save
-            Dictionary<string, object> navigationParameter = new Dictionary<string, object>
-            {
-                { "task", task },
-                { "dataService", _context },
-                { "tasks", Tasks }
-            };
-            await Shell.Current.GoToAsync("EditTask", navigationParameter);
-        }
-
+        /// <summary>
+        /// Ne fonctionne pas, le code delete et réinsère la même task... / crash potentiel
+        /// Ceci car je n'ai pas accès aux champs en bas de page depuis ici (et ce ne serais pas UI approved)
+        /// -> Solution en attente : créer une page à part (formulaire) et gérer le Update là bas
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        //[RelayCommand]
+        //public async System.Threading.Tasks.Task EditTaskAsync(int id)
+        //{
+        //    //1. Find the task
+        //    TaskManager.Models.Task task = Tasks.FirstOrDefault(t => t.Id == id);
+        //    //2. Delete the old task
+        //    await DeleteTaskAsync(id); //in db
+        //    Tasks.RemoveAt(Tasks.IndexOf(task)); //in vars
+        //    //3. Save the task
+        //    await _context.AddItemAsync<Task>(task);
+        //    Tasks.Add(task);
+        //}
 
         [RelayCommand]
         public async System.Threading.Tasks.Task LoadTasksAsync()
