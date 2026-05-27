@@ -33,4 +33,14 @@ public partial class ShowLists : ContentPage
     {
         await Shell.Current.GoToAsync(nameof(ShowTags), true);
     }
+
+    /// <summary>
+    /// Send the user to the list creation page
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private async void OnAddTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(nameof(NewList));
+    }
 }
