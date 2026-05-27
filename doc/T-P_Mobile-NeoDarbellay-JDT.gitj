@@ -135,105 +135,14 @@
       "author": "neo-darbellay"
     },
     {
-      "id": "19a49d15-69bc-405d-8584-954c38c3330a",
-      "type": "commitpatch",
-      "sha": "39fc2a1eab2bf98d2a58f884c27bf1262b5a6555",
-      "url": "https://github.com/neo-darbellay/P_Mobile/commit/39fc2a1eab2bf98d2a58f884c27bf1262b5a6555",
-      "name": "feat(Style): Fait en sorte que la bar de titre est custom + ajout de styles",
-      "description": "Cela m'a pris du temps, car j'ai eu beaucoup de soucis pour compiler l'application",
-      "date": "2026-04-22T16:33",
-      "duration": 60,
-      "status": "Done",
-      "author": "neo-darbellay",
-      "patch": true
-    },
-    {
-      "id": "491517b6-a83e-44ad-bca3-1e0325e254d6",
-      "type": "commitpatch",
-      "sha": "d82b3c484162df2f4816637760989ce89d76667e",
-      "url": "https://github.com/neo-darbellay/P_Mobile/commit/d82b3c484162df2f4816637760989ce89d76667e",
-      "name": "feat(ShowList): Rendu visuel de ShowList",
-      "description": "Il m'a fallu installer un nouveau packet NuGet pour faire des animations \"onClick\", mais celui là ne voulait pas s'installer pendant un long moment.\r\nJ'ai aussi eu quelques soucis à propos du ScrollView, des padding/margin et des spacing, ce qui m'a retardé énormément. Je m'occuperais des autres pages la prochaine fois.",
-      "date": "2026-04-29T14:35:00.000Z",
-      "duration": 190,
-      "status": "Done",
-      "author": "neo-darbellay",
-      "patch": true
-    },
-    {
-      "id": "2869d31a-22e1-4e89-9cae-28d4eccd8ed6",
+      "id": "ca461c49-493c-407e-819f-1a06532e5779",
       "type": "commitless",
-      "name": "learn(cours): Appris de ce que j'ai loupé la dernière fois",
-      "description": "Le CRUD",
-      "date": "2026-05-06T11:18:00.000Z",
-      "duration": 8,
+      "name": "learn(MAUI): Renseignement sur les applications MAUI",
+      "description": "Mêmes liens que la dernière fois (plus d'autres à la fin de la description), il me faut plus d'information pour pouvoir commencer proprement. Pour l'instant, j'utilise un projet temporaire pour faire des tests\r\n\r\nhttps://learn.microsoft.com/en-us/training/paths/build-apps-with-dotnet-maui/\r\nhttps://learn.microsoft.com/en-us/training/modules/create-user-interface-xaml/",
+      "date": "2026-04-22T12:45:00.000Z",
+      "duration": 95,
       "status": "Done",
       "author": "neo-darbellay"
-    },
-    {
-      "id": "8bd9c3fc-e035-41a9-bc13-afc3fce42d08",
-      "type": "commitpatch",
-      "sha": "426a96697f04945e6089e3280d7c075410bcf4b3",
-      "url": "https://github.com/neo-darbellay/P_Mobile/commit/426a96697f04945e6089e3280d7c075410bcf4b3",
-      "name": "feat(NewList): Début des modifications",
-      "description": "",
-      "date": "2026-05-06T11:56:00.000Z",
-      "duration": 38,
-      "status": "WIP",
-      "author": "neo-darbellay",
-      "patch": true
-    },
-    {
-      "id": "e9b56393-6830-417c-993a-4816b0568c2e",
-      "type": "commitless",
-      "name": "chore(Point de situation): Entretien avec l'enseignant",
-      "description": "Nous avons discuté de la structure de la base de données et nous sommes arrêtés sur la relation 0, 2.\r\nNous avons aussi parlé de la façons dont la liste \"aujourd'hui\" se met à jour",
-      "date": "2026-05-06T12:06:00.000Z",
-      "duration": 10,
-      "status": "Done",
-      "author": "neo-darbellay"
-    },
-    {
-      "id": "b2d3c1d1-7d2e-44ab-b2e2-f7d50620b187",
-      "type": "commitless",
-      "name": "feat(ShowTasks): Début des modifications",
-      "description": "Fait en sorte que le titre de la page est dynamique en rapport à la tâche choisi",
-      "date": "2026-05-13T15:10",
-      "duration": 10,
-      "status": "WIP",
-      "author": "neo-darbellay"
-    },
-    {
-      "id": "27f39ba3-0d6e-4b8b-a791-afb7b3d1d7b2",
-      "type": "commitless",
-      "name": "chore(80%): Faire l'évaluation des 80% avec le professeur",
-      "description": "",
-      "date": "2026-05-13T13:44:00.000Z",
-      "duration": 34,
-      "status": "Done",
-      "author": "neo-darbellay"
-    },
-    {
-      "id": "ba5f8d1a-d031-4e1f-879b-37a087ddfc8c",
-      "type": "commitpatch",
-      "sha": "bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
-      "url": "https://github.com/neo-darbellay/P_Mobile/commit/bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
-      "author": "neo-darbellay",
-      "patch": true,
-      "name": "fix(Tasks): Essayer de réparer les checkbox",
-      "description": "",
-      "date": "2026-05-27T09:53:00.000Z",
-      "duration": 20,
-      "status": "Done"
-    },
-    {
-      "id": "9c65eb73-5737-43b4-aa93-1b56c27a33d5",
-      "type": "commitless",
-      "author": "neo-darbellay",
-      "name": "chore(Analyse des 80%): Parler du nouveau goal du projet",
-      "description": "",
-      "date": "2026-05-27T11:25:00.000Z",
-      "duration": 15
     }
   ]
 }
