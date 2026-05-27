@@ -20,17 +20,11 @@ public partial class ShowTasks : ContentPage
         }
     }
 
-    // Propriété bindée au Label (Description)
-    private string _listDescription;
-    public string Description
-    {
-        get => _listDescription;
-        set
-        {
-            _listDescription = value;
-            OnPropertyChanged();
-        }
-    }
+    /// <summary>
+    /// The list's name - to change later
+    /// </summary>
+    private string _listName = "Maison";
+    private string _listDescription = "Tâches à faire à la maison";
 
     /// <summary>
     /// A list of task that are done here
@@ -55,8 +49,6 @@ public partial class ShowTasks : ContentPage
         BindingContext = this;
 
         _listId = string.Empty;
-        _listDescription = $"Tâches à faire à la maison";
-
         Title = "Chargement...";
 
         //initialize a new service
@@ -68,6 +60,9 @@ public partial class ShowTasks : ContentPage
 
         TasksTodo.ItemsSource = _tasksTodo;
         TasksDone.ItemsSource = _tasksDone;
+
+        ListTitle.Text = $"Tâches {_listName}";
+        ListDescription.Text = _listDescription;
     }
 
     /// <summary>
@@ -78,8 +73,6 @@ public partial class ShowTasks : ContentPage
     {
         // page's title - hard coded
         Title = $"Tâches \"{ListId}\"";
-        // list's description - hard coded
-        ListDescription.Text = _listDescription;
 
         //load all tasks
         _tasks = new ObservableCollection<TaskItem>(await _taskService.LoadTasksAsync());
@@ -112,7 +105,7 @@ public partial class ShowTasks : ContentPage
     }
 
     /// <summary>
-    /// Refresh manually the data
+    /// Refresh the data manually
     /// </summary>
     protected override async void OnAppearing()
         {
@@ -120,7 +113,7 @@ public partial class ShowTasks : ContentPage
 
         _tasks = new ObservableCollection<TaskItem>(await _taskService.LoadTasksAsync());
         //reset the 2 lists if not null
-        if (_tasks.Count > 0)
+        if (_tasks is ObservableCollection<TaskItem>)
         {
             _tasksDone.Clear();
             _tasksDone = new ObservableCollection<TaskItem>(_tasks.ToList().FindAll(t => t.Done == true));
@@ -130,6 +123,27 @@ public partial class ShowTasks : ContentPage
             _tasksTodo = new ObservableCollection<TaskItem>(_tasks.ToList().FindAll(t => t.Done == false));
             TasksTodo.ItemsSource = _tasksTodo;
         }
+    }
+
+    private async void OnDeleteClicked(object sender, EventArgs e)
+    {
+        //get the task's id
+        Border? border = sender as Border;
+        TaskItem? task = border.BindingContext as TaskItem;
+        int taskId = -1;
+        taskId = task.Id;
+
+        //if null, we abort early
+        if (taskId == -1)
+        {
+            return;
+        }
+
+        //delete
+        await _taskService.DeleteTaskByIdAsync(taskId);
+
+        //force refresh the data
+        OnAppearing();
     }
 
     public void MarkTaskAsDone(TaskItem task)

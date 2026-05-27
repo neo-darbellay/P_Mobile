@@ -51,6 +51,24 @@ namespace TaskManager.Services
             }
         }
 
+        public async Task<int> GetNextId()
+        {
+            //GET all tasks
+            List<TaskItem> tasks = await LoadTasksAsync();
+
+            //return 0 if no elements
+            if (tasks.Count == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                //find the greatest id and return it
+                int maxId = tasks.Max(t => t.Id);
+                return maxId + 1;
+            }
+        }
+
         /// <summary>
         /// PUT operation, rewrite the whole file to update some data
         /// </summary>
@@ -114,6 +132,30 @@ namespace TaskManager.Services
             try
             {
                 await File.WriteAllTextAsync(_filePath, JsonSerializer.Serialize(tasks));
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error saving: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// DELETE a specific task
+        /// </summary>
+        /// <param name="task"></param>
+        /// <returns></returns>
+        public async Task DeleteTaskByIdAsync(int taskId)
+        {
+            //GET all tasks
+            List<TaskItem> tasks = await LoadTasksAsync();
+
+            //separate the task from the list
+            List<TaskItem> otherTasks = tasks.FindAll(t => t.Id != taskId);
+
+            //save the list without the task to delete
+            try
+            {
+                await File.WriteAllTextAsync(_filePath, JsonSerializer.Serialize(otherTasks));
             }
             catch (Exception ex)
             {

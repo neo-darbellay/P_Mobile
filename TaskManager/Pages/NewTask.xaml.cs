@@ -7,10 +7,6 @@ namespace TaskManager.Pages;
 public partial class NewTask : ContentPage, IQueryAttributable
 {
     /// <summary>
-    /// The next task's id
-    /// </summary>
-    private int _taskId;
-    /// <summary>
     /// The task we are editing
     /// </summary>
     private TaskItem _task;
@@ -80,7 +76,7 @@ public partial class NewTask : ContentPage, IQueryAttributable
         //set a new id if we are creating
         if (!_isEditing)
         {
-            _task.Id = _taskId;
+            _task.Id = await _taskService.GetNextId();
         }
 
         if (_isEditing)
