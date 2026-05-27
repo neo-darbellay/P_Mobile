@@ -34,7 +34,7 @@
 
                     <Border x:Name="ColorPreview" HeightRequest="50" WidthRequest="50" StrokeShape="RoundRectangle 12" BackgroundColor="{Binding UserPickedColor}">
                         <Border.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            <TapGestureRecognizer Tapped="OpenColorPopup"/>
                         </Border.GestureRecognizers>
                     </Border>
                 </VerticalStackLayout>
