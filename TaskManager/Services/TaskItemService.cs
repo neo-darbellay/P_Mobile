@@ -1,4 +1,4 @@
-﻿using System;
+﻿§using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,17 +37,17 @@ namespace TaskManager.Services
                 //empty list if the file doesn't exists
                 if (!File.Exists(_filePath))
                 {
-                    return new List<TaskItem>();
+                    return [];
                 }
                 //else we get the data
                 string json = await File.ReadAllTextAsync(_filePath);
                 List<TaskItem>? tasks = JsonSerializer.Deserialize<List<TaskItem>>(json);
-                return tasks ?? new List<TaskItem>(); //data or empty list if no data
+                return tasks ?? []; //data or empty list if no data
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Error loading: {ex.Message}");
-                return new List<TaskItem>();
+                return [];
             }
         }
 
@@ -90,6 +90,30 @@ namespace TaskManager.Services
             try
             {
                 await File.WriteAllTextAsync(_filePath, JsonSerializer.Serialize(othersTasks));
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error saving: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// CREATE operation, rewrite the whole file but only create a single task
+        /// </summary>
+        /// <param name="task">The new task</param>
+        /// <returns>A task system</returns>
+        public async Task CreateTaskAsync(TaskItem task)
+        {
+            //GET all tasks
+            List<TaskItem> tasks = await LoadTasksAsync();
+
+            //UPDATE the list
+            tasks.Add(task);
+
+            //save the data
+            try
+            {
+                await File.WriteAllTextAsync(_filePath, JsonSerializer.Serialize(tasks));
             }
             catch (Exception ex)
             {
