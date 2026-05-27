@@ -156,6 +156,41 @@
       "date": "2026-05-27T09:53:00.000Z",
       "duration": 20,
       "status": "Done"
+    },
+    {
+      "id": "f3061588-5ed3-41a5-bd43-348236e3074c",
+      "type": "commitless",
+      "author": "neo-darbellay",
+      "name": "chore(Env): Mise en place de la branche main",
+      "description": "",
+      "date": "2026-05-27T11:35:00.000Z",
+      "duration": 10
+    },
+    {
+      "id": "a68c5e21-774b-49f2-8b40-fd6b9334c858",
+      "type": "commitpatch",
+      "sha": "9b5b79b8c74565c2be45d04b11de6320f46340dd",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/9b5b79b8c74565c2be45d04b11de6320f46340dd",
+      "author": "neo-darbellay",
+      "patch": true,
+      "name": "doc(Test d'acceptation): Création des tests",
+      "description": "Ils ne sont pas rempli pour le moment, car l'application ne fonctionne pas pour l'instant",
+      "date": "2026-05-27T14:05:00.000Z",
+      "duration": 33,
+      "status": "Done"
+    },
+    {
+      "id": "cef1dfe9-aab7-4b13-b5de-bc7b96392a5b",
+      "type": "commitpatch",
+      "sha": "12f5cf03bf25d941f9926b15667f8247778c543b",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/12f5cf03bf25d941f9926b15667f8247778c543b",
+      "author": "neo-darbellay",
+      "patch": true,
+      "name": "fix(ShowLists): Modifié pour utiliser des paramètres de navigation",
+      "description": "",
+      "date": "2026-05-27T14:35:00.000Z",
+      "duration": 30,
+      "status": "Done"
     }
   ]
 }
