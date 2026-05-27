@@ -11,12 +11,12 @@ namespace TaskManager.Models
         /// <summary>
         /// The id is unique and not-null, it referes to a specific instance of the object
         /// </summary>
-        public int Id {  get; private set; }
+        public int Id {  get; set; }
 
         /// <summary>
         /// The task's name : like "Feed the cat", must be not-null
         /// </summary>
-        public required string Title { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// A nullable description
