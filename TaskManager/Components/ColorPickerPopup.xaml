@@ -8,12 +8,14 @@
 
     <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="White">
 
+        <!-- Color picker -->
         <controls:ColorPicker
             x:Name="Picker"
             WidthRequest="200"
             HeightRequest="200"
             PickedColor="{Binding SelectedColor, Mode=TwoWay}" />
 
+        <!-- Buttons -->
         <Grid ColumnDefinitions="*, *">
             <Button Grid.Column="0" Text="Annuler" Clicked="OnCancelClicked" BackgroundColor="Transparent" TextColor="Black" BorderColor="Black" BorderWidth="2"/>
             <Button Grid.Column="1" Text="Enregistrer" Clicked="OnDoneClicked" BackgroundColor="#0088FF"/>
