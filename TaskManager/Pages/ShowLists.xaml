@@ -218,6 +218,6 @@
         </Border>
 
         <!-- Bottom buttons -->
-        <components:BottomButtons Grid.Row="3" AddRoute="NewList"/>
+        <components:BottomButtons Grid.Row="3" AddRoute="NewList" ShowHome="false"/>
     </Grid>
 </ContentPage>

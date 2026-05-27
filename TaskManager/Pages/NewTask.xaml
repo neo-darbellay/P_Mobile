@@ -6,14 +6,14 @@
              xmlns:components="clr-namespace:TaskManager.Components"
              x:Class="TaskManager.Pages.NewTask"
              Title="Tâches 'LISTE'"
-             Padding="10,0,10,0">
+             Padding="10,0">
     <Grid RowDefinitions="Auto, *, Auto">
         <!--Header-->
         <VerticalStackLayout Grid.Row="0" Padding="0,10,0,0">
             <Label Text="Nouvelle tâche" Style="{StaticResource H1Label}" VerticalOptions="Center"  HorizontalOptions="Center" Margin="0, 0, 0, 10"/>
         </VerticalStackLayout>
 
-        <!-- Lists -->
+        <!-- Task settings -->
         <ScrollView Grid.Row="1" VerticalOptions="Fill">
             <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Stretch" Padding="40">
                 <VerticalStackLayout Spacing="10">
