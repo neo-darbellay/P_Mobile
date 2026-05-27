@@ -143,6 +143,19 @@
       "duration": 95,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "325dbf68-f383-4d7c-b160-90560ed95eb1",
+      "type": "commitpatch",
+      "sha": "bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
+      "author": "neo-darbellay",
+      "patch": true,
+      "name": "fix(Tasks): Essayer de réparer les checkbox",
+      "description": "",
+      "date": "2026-05-27T09:53:00.000Z",
+      "duration": 20,
+      "status": "Done"
     }
   ]
 }
