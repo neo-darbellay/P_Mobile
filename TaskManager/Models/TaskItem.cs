@@ -16,7 +16,7 @@ namespace TaskManager.Models
         /// <summary>
         /// The task's name : like "Feed the cat", must be not-null
         /// </summary>
-        public required string Name { get; set; }
+        public required string Title { get; set; }
 
         /// <summary>
         /// A nullable description

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using TaskManager.Models;
 
 namespace TaskManager.Pages;
 
@@ -60,33 +61,21 @@ public partial class ShowTasks : ContentPage
         {
             Title = "Prendre mes médicaments",
             Description = "Pour les allergies",
-            Date = "Lun. 7h00",
-            IsDone = false,
-            Tags = new()
-            {
-                new Tag { Name = "Important", Color = "Red" }
-            }
+            Done = false,
         });
 
         TasksTodo.Add(new TaskItem
         {
             Title = "Nourrir le poisson rouge",
             Description = "Nourriture bio",
-            Date = "Lun. 11h00",
-            IsDone = false,
-            Tags = new()
-            {
-                new Tag { Name = "Important", Color = "Red" },
-                new Tag { Name = "Animaux", Color = "Green" }
-            }
+            Done = false,
         });
 
         TasksDone.Add(new TaskItem
         {
             Title = "Acheter du pain",
             Description = "Un pain paysan",
-            Date = "Lundi",
-            IsDone = true
+            Done = true
         });
 
         System.Diagnostics.Debug.WriteLine($"List ID: {ListId}");
@@ -97,7 +86,7 @@ public partial class ShowTasks : ContentPage
         if (TasksTodo.Contains(task))
         {
             TasksTodo.Remove(task);
-            task.IsDone = true;
+            task.Done = true;
             TasksDone.Add(task);
         }
     }
@@ -107,7 +96,7 @@ public partial class ShowTasks : ContentPage
         if (TasksDone.Contains(task))
         {
             TasksDone.Remove(task);
-            task.IsDone = false;
+            task.Done = false;
             TasksTodo.Add(task);
         }
     }

@@ -17,7 +17,7 @@
 
     <ShellContent
         Shell.BackgroundColor="#D9D9D9"
-        ContentTemplate="{DataTemplate lists:ShowLists}"
+        ContentTemplate="{DataTemplate lists:ShowTasks}"
         Route="MainPage" />
 
 </Shell>
