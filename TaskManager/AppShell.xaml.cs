@@ -13,7 +13,6 @@ namespace TaskManager
             Routing.RegisterRoute(nameof(ShowTasks), typeof(ShowTasks));
             Routing.RegisterRoute(nameof(ListSettings), typeof(ListSettings));
             Routing.RegisterRoute(nameof(NewTask), typeof(NewTask));
-            Routing.RegisterRoute(nameof(UpdateTask), typeof(UpdateTask));
             Routing.RegisterRoute(nameof(ShowTags), typeof(ShowTags));
             Routing.RegisterRoute(nameof(NewTag), typeof(NewTag));
             Routing.RegisterRoute(nameof(UpdateTag), typeof(UpdateTag));
