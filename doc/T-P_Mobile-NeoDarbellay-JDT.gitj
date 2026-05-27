@@ -212,6 +212,28 @@
       "duration": 34,
       "status": "Done",
       "author": "neo-darbellay"
+    },
+    {
+      "id": "ba5f8d1a-d031-4e1f-879b-37a087ddfc8c",
+      "type": "commitpatch",
+      "sha": "bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
+      "url": "https://github.com/neo-darbellay/P_Mobile/commit/bd3e630ceccc2804aa6b24e3322b16f21a3031a9",
+      "author": "neo-darbellay",
+      "patch": true,
+      "name": "fix(Tasks): Essayer de réparer les checkbox",
+      "description": "",
+      "date": "2026-05-27T09:53:00.000Z",
+      "duration": 20,
+      "status": "Done"
+    },
+    {
+      "id": "9c65eb73-5737-43b4-aa93-1b56c27a33d5",
+      "type": "commitless",
+      "author": "neo-darbellay",
+      "name": "chore(Analyse des 80%): Parler du nouveau goal du projet",
+      "description": "",
+      "date": "2026-05-27T11:25:00.000Z",
+      "duration": 15
     }
   ]
 }
