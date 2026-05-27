@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:components="clr-namespace:TaskManager.Components"
+             x:Class="TaskManager.Pages.ShowLists"
+             Title="Mes listes"
+             Padding="10,0,10,0">
+    <Grid RowDefinitions="Auto, *, Auto, Auto">
+        <!--Header-->
+        <VerticalStackLayout Grid.Row="0" Padding="0,10,0,0">
+            <Label Text="Mes Listes" Style="{StaticResource H1Label}" VerticalOptions="Center"  HorizontalOptions="Center" Margin="0, 0, 0, 10"/>
+        </VerticalStackLayout>
+
+        <!-- Lists -->
+        <ScrollView Grid.Row="1" VerticalOptions="Fill">
+            <VerticalStackLayout Spacing="20">
+                <Border BackgroundColor="#FF383C" StrokeShape="RoundRectangle 16">
+                    <!-- Tap event -->
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnListTapped" CommandParameter="0"/>
+                    </Border.GestureRecognizers>
+
+                    <!-- Touch animation -->
+                    <Border.Behaviors>
+                        <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                    </Border.Behaviors>
+
+                    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" HeightRequest="113">
+                        <Label Text="Aujourd'hui" Style="{StaticResource H2Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        <Label Text="Liste dynamique de tâches à faire aujourd'hui" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                    </FlexLayout>
+                </Border>
+
+                <Grid RowSpacing="4" ColumnSpacing="4">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="128"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Grid.Row="0" BackgroundColor="#FF8D28" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped" CommandParameter="1"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Maison" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Tâches à faire à la maison" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="0" BackgroundColor="#FFCC00" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped" CommandParameter="2"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Devoirs" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Devoir de l'ETML à faire" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="0" BackgroundColor="#34C759" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped" CommandParameter="3"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Devoirs" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Devoir de l'ETML à faire" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="1" BackgroundColor="#00C8B3" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped" CommandParameter="4"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Travail" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="1" BackgroundColor="#00C3D0" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Nom" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Description" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="1" BackgroundColor="#00C0E8" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Nom" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Description" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+
+                    <Border Grid.Column="0" Grid.Row="2" BackgroundColor="#0088FF" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Nom" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Description" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="1" Grid.Row="2" BackgroundColor="#6155F5" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Nom" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Description" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                    <Border Grid.Column="2" Grid.Row="2" BackgroundColor="#CB30E0" StrokeShape="RoundRectangle 16">
+                        <!-- Tap event -->
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnListTapped"/>
+                        </Border.GestureRecognizers>
+
+                        <!-- Touch animation -->
+                        <Border.Behaviors>
+                            <toolkit:TouchBehavior PressedOpacity="0.6" PressedScale="0.95"/>
+                        </Border.Behaviors>
+
+                        <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center">
+                            <Label HorizontalTextAlignment="Center" Text="Nom" Style="{StaticResource H3Label}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                            <Label HorizontalTextAlignment="Center" Text="Description" Style="{StaticResource SmallerLabel}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                        </FlexLayout>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Tags -->
+        <Border Grid.Row="2" BackgroundColor="#0088FF" StrokeShape="RoundRectangle 42" Margin="20,0,20,18">
+            <!-- Tap event -->
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTagsTapped"/>
+            </Border.GestureRecognizers>
+
+            <!-- Touch animation -->
+            <Border.Behaviors>
+                <toolkit:TouchBehavior
+                    PressedOpacity="0.6"
+                    PressedScale="0.95"/>
+            </Border.Behaviors>
+
+            <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" HorizontalOptions="Fill" HeightRequest="83">
+                <Label
+                Text="Gérer les tags"
+                Style="{StaticResource H3Label}"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="White"/>
+            </FlexLayout>
+        </Border>
+
+        <!-- Bottom buttons -->
+        <components:BottomButtons Grid.Row="3" AddRoute="NewList"/>
+    </Grid>
+</ContentPage>

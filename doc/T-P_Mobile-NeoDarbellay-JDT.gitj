@@ -1,9 +1,32 @@
 {
-  "repoUrl": "https://github.com/neo-darbellay/P_Mobile",
-  "projectName": "P_Mobile_neodarbellay",
-  "branch": "main",
+  "projectName": "P_Mobile",
+  "branch": "page-layout",
   "me": "neo-darbellay",
   "journalStartDate": null,
+  "columns": [
+    {
+      "label": "Tâche",
+      "source": "name",
+      "field": "name"
+    },
+    {
+      "label": "Description",
+      "source": "description",
+      "field": "description"
+    },
+    {
+      "label": "Date",
+      "source": "date",
+      "format": "date",
+      "field": "date"
+    },
+    {
+      "label": "Durée",
+      "source": "duration",
+      "format": "duration",
+      "field": "duration"
+    }
+  ],
   "exceptions": [
     {
       "id": "59cc9b06-c9c6-49fa-a8c8-f56acb64310b",
