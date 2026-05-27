@@ -36,6 +36,10 @@ public partial class NewTask : ContentPage, IQueryAttributable
             _task = task;
             //since the title is not-nullable, we determine wether we create if it is empty
             _isEditing = !(string.IsNullOrEmpty(task.Title));
+
+            //set the fields
+            TitleEntry.Text = _task.Title;
+            DescriptionEntry.Text = _task.Description;
         }
         //GET the taskService
         if (query.TryGetValue("dataService", out object? taskServiceObj) && taskServiceObj is TaskItemService taskService)

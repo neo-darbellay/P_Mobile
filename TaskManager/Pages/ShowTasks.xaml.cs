@@ -125,6 +125,11 @@ public partial class ShowTasks : ContentPage
         }
     }
 
+    /// <summary>
+    /// Delete a task
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnDeleteClicked(object sender, EventArgs e)
     {
         //get the task's id
@@ -144,6 +149,28 @@ public partial class ShowTasks : ContentPage
 
         //force refresh the data
         OnAppearing();
+    }
+
+    private async void OnEditTapped(object sender, EventArgs e)
+    {
+        //get the task clicked
+        VerticalStackLayout? vertical = sender as VerticalStackLayout;
+        TaskItem? task = vertical.BindingContext as TaskItem;
+
+        //if null, we abort early
+        if (task == null)
+        {
+            return;
+        }
+
+        //navigate to the form page
+        Dictionary<string, object> navigationParameter = new Dictionary<string, object>
+        {
+            { "task", task },
+            { "tasks", _tasks },
+            { "dataService", _taskService }
+        };
+        await Shell.Current.GoToAsync("NewTask", navigationParameter);
     }
 
     public void MarkTaskAsDone(TaskItem task)
