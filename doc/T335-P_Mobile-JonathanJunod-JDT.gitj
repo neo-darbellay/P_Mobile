@@ -1,7 +1,7 @@
 {
   "repoUrl": "https://github.com/neo-darbellay/P_Mobile",
   "projectName": "T335-P_Mobile-JonathanJunod-JDT",
-  "branch": "main",
+  "branch": "SQLite",
   "me": "Jonathan150408",
   "journalStartDate": null,
   "exceptions": [
@@ -62,6 +62,66 @@
       "description": "pages :\r\n- nouvelle liste\r\n- Modifier une tâche\r\n- Mes tags\r\n- Nouveau tag\r\n- Modifier un tag\r\n\r\nAjout des relations (flèches) et descriptions (texte)\r\n\r\nRévision des syles (couleurs, forme des éléments) et de l'accessibilité (taille des éléments, disposition, navigation).\r\n\r\nEn collaboration avec Néo Darbellay",
       "date": "2026-04-01T13:47:00.000Z",
       "duration": 135,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "1728627c-5651-44a9-8cf7-f9f29c65fbeb",
+      "type": "commitless",
+      "name": "doc(SQLite et MAUI) : tenter de comprendre comment faire la relation entre les 2",
+      "description": "https://www.youtube.com/watch?v=7pO3A8VvtRM&t=14s",
+      "date": "2026-04-01T14:33:00.000Z",
+      "duration": 48,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "063810e5-377b-4c82-b5bb-8ca04105d12a",
+      "type": "commitless",
+      "name": "chore(point de situation) : entretient avec l'enseignant",
+      "description": "Nous avons discuté de la structure de la base de données et nous sommes arrêtés sur la relation 0, 2.\r\nNous avons aussi parlé de la façons dont la liste ajd ne met à jour",
+      "date": "2026-05-06T12:07:00.000Z",
+      "duration": 10,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "358b3ce1-1dda-494d-8052-8f02a1ab5736",
+      "type": "commitless",
+      "name": "fix(erreur Visual Studio déployement) : faire en sorte que le déployement fonctionne à nouveau",
+      "description": "L'émulateur manquait de place pour l'application, le temps de comprendre ce qu'il se passe et faire de la place et c'érait bon",
+      "date": "2026-05-06T12:36:00.000Z",
+      "duration": 10,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "83b21d78-bfa0-4551-a329-50a8d397a083",
+      "type": "commitless",
+      "name": "chore(review code) : review de l'avancée avec le prof",
+      "description": "",
+      "date": "2026-05-13T13:44:00.000Z",
+      "duration": 35,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "77da14f5-3ca0-4b36-a570-b35ff34ef517",
+      "type": "commitless",
+      "name": "chore(review) : redéfinir les objectifs ave le client",
+      "description": "",
+      "date": "2026-05-27T11:36:00.000Z",
+      "duration": 15,
+      "status": "Done",
+      "author": "Jonathan150408"
+    },
+    {
+      "id": "da20b87e-f168-4fda-aa8a-fb22b795f888",
+      "type": "commitless",
+      "name": "doc(gitjournal) : résoudre les souci de branche",
+      "description": "",
+      "date": "2026-05-27T11:36:00.000Z",
+      "duration": 10,
       "status": "Done",
       "author": "Jonathan150408"
     }
