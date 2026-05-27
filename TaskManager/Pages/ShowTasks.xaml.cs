@@ -92,28 +92,47 @@ public partial class ShowTasks : ContentPage
         System.Diagnostics.Debug.WriteLine($"List ID: {ListId}");
     }
 
+    public void MarkTaskAsDone(TaskItem task)
+    {
+        if (TasksTodo.Contains(task))
+        {
+            TasksTodo.Remove(task);
+            task.IsDone = true;
+            TasksDone.Add(task);
+        }
+    }
+
+    public void MarkTaskAsTodo(TaskItem task)
+    {
+        if (TasksDone.Contains(task))
+        {
+            TasksDone.Remove(task);
+            task.IsDone = false;
+            TasksTodo.Add(task);
+        }
+    }
+
+
     private void OnTaskCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        if (sender is CheckBox cb && cb.BindingContext is TaskItem task)
+        if (sender is CheckBox checkBox && checkBox.BindingContext is TaskItem task)
         {
-            if (e.Value) // checked = DONE
+            var vm = BindingContext as ShowTasks;
+            if (vm == null) return;
+
+            if (e.Value)
             {
-                if (TasksTodo.Contains(task))
-                {
-                    TasksTodo.Remove(task);
-                    task.IsDone = true;
-                    TasksDone.Add(task);
-                }
+                vm.MarkTaskAsDone(task);
             }
-            else // unchecked = TODO again
+            else
             {
-                if (TasksDone.Contains(task))
-                {
-                    TasksDone.Remove(task);
-                    task.IsDone = false;
-                    TasksTodo.Add(task);
-                }
+                vm.MarkTaskAsTodo(task);
             }
         }
+    }
+
+    private void OnAddTapped (object sender, TappedEventArgs e)
+    {
+
     }
 }

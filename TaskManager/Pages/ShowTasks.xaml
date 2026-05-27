@@ -37,9 +37,11 @@
 
                                 <!-- Checkbox -->
                                 <CheckBox Grid.Column="0"
-                                    Width="28"
-                                    Height="28"
-                                    Margin="5"/>
+                                    WidthRequest="28"
+                                    HeightRequest="28"
+                                    Margin="5"
+                                    IsChecked="{Binding IsDone, Mode=TwoWay}"
+                                    CheckedChanged="OnTaskCheckedChanged"/>
 
                                 <!-- Content -->
                                 <Grid Grid.Column="1" Margin="15,0">
