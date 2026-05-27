@@ -7,7 +7,6 @@
 *.pdf
 *.zip
 *.docx
-*.png
 
 # Include certain files
 !doc/*.pdf
