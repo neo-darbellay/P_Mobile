@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:controls="clr-namespace:Maui.ColorPicker;assembly=Maui.ColorPicker"
+             xmlns:components="clr-namespace:TaskManager.Components"
              x:Class="TaskManager.Pages.UpdateTask"
-             Title='Tâches "LISTE"'>
-    <VerticalStackLayout Style="{StaticResource Main}">
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Tâches 'LISTE'"
+             Padding="10,0,10,0">
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!--Header-->
+        <VerticalStackLayout Grid.Row="0" Padding="0,10,0,0">
+            <Label Text="Modifier une tâche" Style="{StaticResource H1Label}" VerticalOptions="Center"  HorizontalOptions="Center" Margin="0, 0, 0, 10"/>
+        </VerticalStackLayout>
+
+        <!-- Lists -->
+        <ScrollView Grid.Row="1" VerticalOptions="Fill">
+            <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Stretch" Padding="40">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Nom" FontSize="22" />
+                    <Border StrokeShape="RoundRectangle 8" HorizontalOptions="Fill" StrokeThickness="2">
+                        <Entry x:Name="Name_Entry" Placeholder="Nom" Text="OLD_NAME" FontSize="18" HorizontalTextAlignment="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Description" FontSize="22" Margin="0,20,0,0" />
+                    <Border StrokeShape="RoundRectangle 8" HorizontalOptions="Fill" StrokeThickness="2">
+                        <Entry x:Name="Description_Entry" Placeholder="Description (optionnelle)" Text="OLD_DESC" FontSize="18" HorizontalTextAlignment="Center"/>
+                    </Border>
+                </VerticalStackLayout>
+
+                <Label Text="Tags" HorizontalTextAlignment="Center" FontSize="22" Margin="0,20,0,0" />
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Rectangle WidthRequest="200"
+                        HeightRequest="2"
+                        BackgroundColor="Gray" />
+                </HorizontalStackLayout>
+                <Label Text="NOT IMPLEMENTED" HorizontalTextAlignment="Center" FontSize="22" Margin="0,20,0,0" />
+            </FlexLayout>
+        </ScrollView>
+
+        <!-- Bottom buttons -->
+        <HorizontalStackLayout Grid.Row="3" Spacing="80" HorizontalOptions="Center" Margin="0,0,0,28">
+            <Button x:Name="Cancel" Text="Annuler" Clicked="Cancel_Clicked" BackgroundColor="Transparent" TextColor="Black" BorderColor="Black" BorderWidth="2"/>
+
+            <Button x:Name="Create" Text="Créer" Clicked="Save_Clicked"  BackgroundColor="#0088FF"/>
+        </HorizontalStackLayout>
+    </Grid>
 </ContentPage>
