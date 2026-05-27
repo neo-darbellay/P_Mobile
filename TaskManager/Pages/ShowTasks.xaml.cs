@@ -1,4 +1,7 @@
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using TaskManager.Models;
+using TaskManager.Services;
 
 namespace TaskManager.Pages;
 
@@ -29,9 +32,22 @@ public partial class ShowTasks : ContentPage
         }
     }
 
-    // Collections pour les listes
-    public ObservableCollection<TaskItem> TasksTodo { get; set; } = new();
-    public ObservableCollection<TaskItem> TasksDone { get; set; } = new();
+    /// <summary>
+    /// A list of task that are done here
+    /// </summary>
+    public ObservableCollection<TaskItem> _tasksTodo { get; set; } = new();
+    /// <summary>
+    /// A list of task that aren't done here
+    /// </summary>
+    public ObservableCollection<TaskItem> _tasksDone { get; set; } = new();
+    /// <summary>
+    /// The dataservice that goes and uses the JSON
+    /// </summary>
+    private TaskItemService _taskService;
+    /// <summary>
+    /// All tasks in the list
+    /// </summary>
+    private ObservableCollection<TaskItem> _tasks;
 
     public ShowTasks()
     {
@@ -39,76 +55,100 @@ public partial class ShowTasks : ContentPage
         BindingContext = this;
 
         _listId = string.Empty;
-        _listDescription = string.Empty;
+        _listDescription = $"Tâches à faire à la maison";
 
         Title = "Chargement...";
+
+        //initialize a new service
+        _taskService = new TaskItemService();
+
+        //link the data with the app
+        _tasksTodo = new ObservableCollection<TaskItem>();
+        _tasksDone = new ObservableCollection<TaskItem>();
+
+        TasksTodo.ItemsSource = _tasksTodo;
+        TasksDone.ItemsSource = _tasksDone;
     }
 
-    private void LoadData()
+    /// <summary>
+    /// Loads and set all items needed
+    /// </summary>
+    /// <returns></returns>
+    private async Task LoadData()
     {
-        // Mise à jour Title (binding OK)
+        // page's title - hard coded
         Title = $"Tâches \"{ListId}\"";
+        // list's description - hard coded
+        ListDescription.Text = _listDescription;
 
-        // Description dynamique
-        Description = $"Tâches à faire à la maison";
+        //load all tasks
+        _tasks = new ObservableCollection<TaskItem>(await _taskService.LoadTasksAsync());
+    }
 
-        // Exemple de données
-        TasksTodo.Clear();
-        TasksDone.Clear();
-
-        TasksTodo.Add(new TaskItem
-        {
-            Title = "Prendre mes médicaments",
-            Description = "Pour les allergies",
-            Date = "Lun. 7h00",
-            IsDone = false,
-            Tags = new()
+    /// <summary>
+    /// Navigate to the form page
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <returns></returns>
+    private async void OnAddTapped(object sender, EventArgs e)
+    {
+        //navigate to the form page
+        Dictionary<string, object> navigationParameter = new Dictionary<string, object>
             {
-                new Tag { Name = "Important", Color = "Red" }
-            }
-        });
+                { "task", new TaskItem() },
+                { "tasks", _tasks },
+                { "dataService", _taskService }
+            };
+        await Shell.Current.GoToAsync("NewTask", navigationParameter);
+    }
 
-        TasksTodo.Add(new TaskItem
+    /// <summary>
+    /// Returns to the homepage
+    /// </summary>
+    private async void OnHomeTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("Home", true);
+    }
+
+    /// <summary>
+    /// Refresh manually the data
+    /// </summary>
+    protected override async void OnAppearing()
         {
-            Title = "Nourrir le poisson rouge",
-            Description = "Nourriture bio",
-            Date = "Lun. 11h00",
-            IsDone = false,
-            Tags = new()
-            {
-                new Tag { Name = "Important", Color = "Red" },
-                new Tag { Name = "Animaux", Color = "Green" }
-            }
-        });
+        base.OnAppearing();
 
-        TasksDone.Add(new TaskItem
+        _tasks = new ObservableCollection<TaskItem>(await _taskService.LoadTasksAsync());
+        //reset the 2 lists if not null
+        if (_tasks.Count > 0)
         {
-            Title = "Acheter du pain",
-            Description = "Un pain paysan",
-            Date = "Lundi",
-            IsDone = true
-        });
+            _tasksDone.Clear();
+            _tasksDone = new ObservableCollection<TaskItem>(_tasks.ToList().FindAll(t => t.Done == true));
+            TasksDone.ItemsSource = _tasksDone;
 
-        System.Diagnostics.Debug.WriteLine($"List ID: {ListId}");
+            _tasksTodo.Clear();
+            _tasksTodo = new ObservableCollection<TaskItem>(_tasks.ToList().FindAll(t => t.Done == false));
+            TasksTodo.ItemsSource = _tasksTodo;
+        }
     }
 
     public void MarkTaskAsDone(TaskItem task)
     {
-        if (TasksTodo.Contains(task))
+        if (_tasksTodo.Contains(task))
         {
-            TasksTodo.Remove(task);
-            task.IsDone = true;
-            TasksDone.Add(task);
+            _tasksTodo.Remove(task);
+            task.Done = true;
+            _tasksDone.Add(task);
         }
     }
 
     public void MarkTaskAsTodo(TaskItem task)
     {
-        if (TasksDone.Contains(task))
+        if (_tasksDone.Contains(task))
         {
-            TasksDone.Remove(task);
-            task.IsDone = false;
-            TasksTodo.Add(task);
+            _tasksDone.Remove(task);
+            task.Done = false;
+            _tasksTodo.Add(task);
         }
     }
 
@@ -131,8 +171,4 @@ public partial class ShowTasks : ContentPage
         }
     }
 
-    private void OnAddTapped (object sender, TappedEventArgs e)
-    {
-
-    }
 }
