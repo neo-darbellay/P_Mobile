@@ -7,7 +7,7 @@
              Title="{Binding Title}">
 
     <ScrollView>
-        <VerticalStackLayout Style="{StaticResource Main}" Spacing="20" Margin="20">
+        <VerticalStackLayout Spacing="20" Margin="20">
 
             <Label Text="{Binding Description}"
                    FontSize="16"
