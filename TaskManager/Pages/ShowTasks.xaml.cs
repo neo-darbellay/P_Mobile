@@ -68,17 +68,6 @@ public partial class ShowTasks : ContentPage
 
         ListTitle.Text = $"Tâches {_listName}";
         ListDescription.Text = _listDescription;
-
-        // Check to see if the accelerometer is supported
-        if (!Accelerometer.IsSupported) return;
-
-        // Add the accelerometer shake detection
-        Accelerometer.Default.ShakeDetected += OnShakeDetected;
-
-        if (!Accelerometer.Default.IsMonitoring)
-        {
-            Accelerometer.Default.Start(SensorSpeed.UI);
-        }
     }
 
     /// <summary>
@@ -191,7 +180,36 @@ public partial class ShowTasks : ContentPage
             _tasksTodo = new ObservableCollection<TaskItem>(_tasks.ToList().FindAll(t => t.Done == false));
             TasksTodo.ItemsSource = _tasksTodo;
         }
+
+        //resubscribe ecah time we enter the page, because we unsubscribe every time we leave the page
+        // Check to see if the accelerometer is supported
+        if (!Accelerometer.IsSupported) return;
+
+        // Add the accelerometer shake detection
+        Accelerometer.Default.ShakeDetected += OnShakeDetected;
+        //Accelerometer.Default.ReadingChanged += OnReadingChanged;
+
+        if (!Accelerometer.Default.IsMonitoring)
+        {
+            Accelerometer.Default.Start(SensorSpeed.UI);
+        }
     }
+
+    ///// <summary>
+    ///// Debug the accelerometer
+    ///// </summary>
+    ///// <param name="sender"></param>
+    ///// <param name="e"></param>
+    //private void OnReadingChanged(object sender, AccelerometerChangedEventArgs e)
+    //{
+    //    var data = e.Reading;
+
+    //    System.Diagnostics.Debug.WriteLine(
+    //        $"X:{data.Acceleration.X} " +
+    //        $"Y:{data.Acceleration.Y} " +
+    //        $"Z:{data.Acceleration.Z}"
+    //    );
+    //}
 
     /// <summary>
     /// Delete a task
@@ -219,6 +237,11 @@ public partial class ShowTasks : ContentPage
         OnAppearing();
     }
 
+    /// <summary>
+    /// Go to the edit a task page to edit the tapped task
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnEditTapped(object sender, EventArgs e)
     {
         //get the task clicked
