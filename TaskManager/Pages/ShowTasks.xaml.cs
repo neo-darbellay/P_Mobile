@@ -69,6 +69,9 @@ public partial class ShowTasks : ContentPage
         ListTitle.Text = $"Tâches {_listName}";
         ListDescription.Text = _listDescription;
 
+        // Check to see if the accelerometer is supported
+        if (!Accelerometer.IsSupported) return;
+
         // Add the accelerometer shake detection
         Accelerometer.Default.ShakeDetected += OnShakeDetected;
 
@@ -122,6 +125,9 @@ public partial class ShowTasks : ContentPage
     /// </summary>
     private async void OnShakeDetected(object sender, EventArgs e)
     {
+        // Check to see if the accelerometer is supported
+        if (!Accelerometer.IsSupported) return;
+
         // Prevent spam shakes
         if (_isShakeProcessing)
             return;
@@ -153,6 +159,9 @@ public partial class ShowTasks : ContentPage
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
+
+        // Check to see if the accelerometer is supported
+        if (!Accelerometer.IsSupported) return;
 
         // Cleanup
         Accelerometer.Default.ShakeDetected -= OnShakeDetected;
