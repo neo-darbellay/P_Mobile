@@ -21,6 +21,11 @@ public partial class ShowTasks : ContentPage
     }
 
     /// <summary>
+    /// Whether or not the device is shaking
+    /// </summary>
+    private bool _isShakeProcessing = false;
+
+    /// <summary>
     /// The list's name - to change later
     /// </summary>
     private string _listName = "Maison";
@@ -63,6 +68,14 @@ public partial class ShowTasks : ContentPage
 
         ListTitle.Text = $"Tâches {_listName}";
         ListDescription.Text = _listDescription;
+
+        // Add the accelerometer shake detection
+        Accelerometer.Default.ShakeDetected += OnShakeDetected;
+
+        if (!Accelerometer.Default.IsMonitoring)
+        {
+            Accelerometer.Default.Start(SensorSpeed.UI);
+        }
     }
 
     /// <summary>
@@ -102,6 +115,52 @@ public partial class ShowTasks : ContentPage
     private async void OnHomeTapped(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("Home", true);
+    }
+
+    /// <summary>
+    /// Triggered when the device is shaken
+    /// </summary>
+    private async void OnShakeDetected(object sender, EventArgs e)
+    {
+        // Prevent spam shakes
+        if (_isShakeProcessing)
+            return;
+
+        _isShakeProcessing = true;
+
+        await MainThread.InvokeOnMainThreadAsync(async () =>
+        {
+            Dictionary<string, object> navigationParameter = new Dictionary<string, object>
+            {
+                { "task", new TaskItem() },
+                { "tasks", _tasks },
+                { "dataService", _taskService }
+            };
+
+            // Navigate to NewTask
+            await Shell.Current.GoToAsync("NewTask", navigationParameter);
+
+            // Wait 2 seconds before allowing another shake
+            await Task.Delay(2000);
+
+            _isShakeProcessing = false;
+        });
+    }
+
+    /// <summary>
+    /// Clean up events
+    /// </summary>
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+
+        // Cleanup
+        Accelerometer.Default.ShakeDetected -= OnShakeDetected;
+
+        if (Accelerometer.Default.IsMonitoring)
+        {
+            Accelerometer.Default.Stop();
+        }
     }
 
     /// <summary>
